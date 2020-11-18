@@ -14,7 +14,7 @@ services:
         network_mode: "host"
     zigbee2mqtt:
       container_name: zigbee2mqtt
-      image: koenkk/zigbee2mqtt
+      image: koenkk/zigbee2mqtt:latest-dev
       volumes:
         - ./zigbee2mqtt:/app/data
         - /run/udev:/run/udev:ro
