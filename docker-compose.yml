@@ -38,6 +38,8 @@ services:
         - TZ=Europe/Prague
       ports:
         - 1880:1880
+        - 54545:54545
+        - 45454:45454
       volumes:
         - ./nodered:/data
 
