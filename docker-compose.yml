@@ -3,18 +3,20 @@ version: '3.7'
 services:
 
     mosquitto:
-        image: eclipse-mosquitto
-        restart: always
-        container_name: mosquitto
-        volumes:
-          - ./mosquitto/data:/mosquitto/data
-          - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-        ports:
-          - 1883:1883
-        network_mode: "host"
+      image: eclipse-mosquitto
+      restart: always
+      container_name: mosquitto
+      volumes:
+        - ./mosquitto/data:/mosquitto/data
+        - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      ports:
+        - 1883:1883
+      network_mode: "host"
     zigbee2mqtt:
       container_name: zigbee2mqtt
       image: koenkk/zigbee2mqtt:latest-dev
+      ports:
+        - 8080:8080
       volumes:
         - ./zigbee2mqtt:/app/data
         - /run/udev:/run/udev:ro
