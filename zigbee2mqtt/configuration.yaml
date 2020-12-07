@@ -9,4 +9,5 @@ mqtt:
   server: 'mqtt://localhost'
 serial:
   port: /dev/ttyACM0
-devices:
+advanced:
+  network_key: GENERATE
